@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;  text-align: center;
+  overscroll-behavior: none;
+
+  /* Image de fond */
+  background-image: url('ligne.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+ 
+
+.share-btn {
+
+
+  position: absolute;
+  background: #9566b8;
+  width: 40px;
+  height: 40px;
+  border-radius: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-size 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease;
+  z-index: 2;
+  top: 2%;
+  right: 2%;
+  background-image: url('partage.png');
+  animation: rotation-lente 15s linear infinite;
+  background-size: 60%;
+  
+
+}
+
+@keyframes rotation-lente {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.share-btn:hover {
+
+  background-color: rgba(239, 247, 242, 0.8);
+  transform: scale(1.2);
+
+}
+
+
+
+/* Bloc photo de profil */
+
+.ancre {
+  position: fixed;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 191px;
+  height: 191px;
+  z-index: 2;
+}
+ 
+
+
+.profile-pic {
+
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  position: relative;
+  z-index: 2;
+  transition: box-shadow 0.3s ease; 
+
+}
+ 
+
+.profile-pic:hover {
+
+  box-shadow: 0 0 20px 5px rgba(15, 17, 66, 0.8); /* Effet lumière bleu */
+
+}
+
+ 
+/* Boutons de partage */
+
+.Github,
+
+.Linkedin,
+
+.Gmail {
+
+  position: absolute;
+  background: #9566b8;
+  width: 40px;
+  height: 40px;
+  border-radius: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: none;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-size 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease;
+  z-index: 2;
+
+}
+
+ 
+.Github {
+
+  top: -20%;
+  left: -40%;
+  background-image: url('github.png');
+  background-size: 65%;
+
+}
+
+.Github:hover {
+
+  background-color: rgba(239, 247, 242, 0.8);
+  transform: scale(1.2);
+
+}
+ 
+.Linkedin {
+
+  top: 27%;
+  right: -55%;
+  background-image: url('linkedin.png');
+  background-size: 60%;
+
+}
+
+.Linkedin:hover {
+
+  background-color: rgba(239, 247, 242, 0.8);
+  transform: scale(1.2);
+
+}
+ 
+.Gmail {
+
+  top: 70%;
+  left: -27%;
+  background-image: url('email.png');
+  background-size: 60%;
+
+}
+
+.Gmail:hover {
+
+  background-color: rgba(239, 247, 242, 0.8);
+  transform: scale(1.2);
+
+}
+ 
+/* Nom */
+
+.nom {
+  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+.Bio_poste {
+  position: fixed;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+
+ 
+/* Cadre des liens */
+.cadre {
+  position: fixed;
+  bottom: 6.5%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #9566b8;
+  border-radius: 33px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  padding-left: 10px;
+  padding-right: 10px;
+  z-index: 1;
+}
+
+
+
+ 
+/* Liens */
+
+.Portfolio,
+
+.CV,
+
+.Lettre_de_motivation {
+
+  display: block;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  border-radius: 25px;
+  text-decoration: none;
+  width: 150px;
+  text-align: center;
+  margin: 25px;
+  box-shadow:
+
+    6px 6px 3px rgba(0, 0, 0, 0.55),
+
+    0 0 8px 0.5mm #412f13;
+
+  border: 0.2mm solid rgb(97, 70, 27);
+
+}
+
+
+  @keyframes balance-horizontal {
+
+    0%   { transform: translateX(0); }
+    25%  { transform: translateX(2px); }
+    50%  { transform: translateX(0); }
+    75%  { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+  }
+  
+  .Portfolio span,
+  .CV span,
+  .Lettre_de_motivation span {
+
+    display: inline-block;
+    animation: balance-horizontal 2s ease-in-out infinite;
+  
+  }
+
+
+
+/* Footer */
+
+.bas_de_page {
+
+  position:fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 2.7mm;
+
+
+}
+
+ 
