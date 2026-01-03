@@ -1,278 +1,162 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+/* RESET & BASE */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400&display=swap');
 html, body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  width: 100vw;
-  overflow: hidden;
-  font-family: 'Montserrat', sans-serif;  text-align: center;
-  overscroll-behavior: none;
-
-  /* Image de fond */
-  background-image: url('ligne.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+font-family: 'Outfit', sans-serif; /* Application de la nouvelle police */    color: #2d3436;
+    text-align: center;
+    background-image: url('ligne.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
 }
 
- 
-
+/* BOUTON PARTAGE */
 .share-btn {
-
-
-  position: absolute;
-  background: #9566b8;
-  width: 40px;
-  height: 40px;
-  border-radius: 60%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border: none;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: background-size 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease;
-  z-index: 2;
-  top: 2%;
-  right: 2%;
-  background-image: url('partage.png');
-  animation: rotation-lente 15s linear infinite;
-  background-size: 60%;
-  
-
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #9566b8;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    background-image: url('partage.png');
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    animation: rotation-lente 15s linear infinite;
+    z-index: 10;
 }
 
 @keyframes rotation-lente {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
-
-.share-btn:hover {
-
-  background-color: rgba(239, 247, 242, 0.8);
-  transform: scale(1.2);
-
+/* LE BLOC CENTRAL (Tout ce que tu veux au milieu) */
+main {
+    position: absolute;
+    top: 50%; /* On le place à 50% du haut */
+    left: 50%; /* On le place à 50% de la gauche */
+    transform: translate(-50%, -50%); /* On le décale de sa propre taille pour qu'il soit PILE au centre */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 
-
-
-/* Bloc photo de profil */
-
+/* PHOTO ET ICONES */
 .ancre {
-  position: fixed;
-  top: 15%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 191px;
-  height: 191px;
-  z-index: 2;
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin-bottom: 20px;
+    display: block;
 }
- 
-
 
 .profile-pic {
-
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0;
-  position: relative;
-  z-index: 2;
-  transition: box-shadow 0.3s ease; 
-
-}
- 
-
-.profile-pic:hover {
-
-  box-shadow: 0 0 20px 5px rgba(15, 17, 66, 0.8); /* Effet lumière bleu */
-
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    z-index: 2;
 }
 
- 
-/* Boutons de partage */
-
-.Github,
-
-.Linkedin,
-
-.Gmail {
-
-  position: absolute;
-  background: #9566b8;
-  width: 40px;
-  height: 40px;
-  border-radius: 60%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  border: none;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: center;
-  transition: background-size 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease;
-  z-index: 2;
-
+.Github, .Linkedin, .Gmail {
+    position: absolute;
+    background: #9566b8;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 3;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
- 
-.Github {
+.Github { top: -14%; left: -65%; background-image: url('github.png'); background-size: 65%; }
+.Linkedin { top: 35%; right: -55%; background-image: url('linkedin.png'); background-size: 60%; }
+.Gmail { bottom: -3%; left: -38%; background-image: url('email.png'); background-size: 60%; }
 
-  top: -20%;
-  left: -40%;
-  background-image: url('github.png');
-  background-size: 65%;
-
-}
-
-.Github:hover {
-
-  background-color: rgba(239, 247, 242, 0.8);
-  transform: scale(1.2);
-
-}
- 
-.Linkedin {
-
-  top: 27%;
-  right: -55%;
-  background-image: url('linkedin.png');
-  background-size: 60%;
-
-}
-
-.Linkedin:hover {
-
-  background-color: rgba(239, 247, 242, 0.8);
-  transform: scale(1.2);
-
-}
- 
-.Gmail {
-
-  top: 70%;
-  left: -27%;
-  background-image: url('email.png');
-  background-size: 60%;
-
-}
-
-.Gmail:hover {
-
-  background-color: rgba(239, 247, 242, 0.8);
-  transform: scale(1.2);
-
-}
- 
-/* Nom */
-
+/* TEXTES */
 .nom {
-  
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
+    font-size: 1.3rem;
+    margin: 10px 0 2px 0;
+    color: #000;
+    padding-bottom: 0.3cm;
 }
 
 .Bio_poste {
-  position: fixed;
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
+    font-size: 1rem;
+    margin: 0 0 25px 0;
+    color: #333;
 }
 
-
- 
-/* Cadre des liens */
+/* CADRE VIOLET */
 .cadre {
-  position: fixed;
-  bottom: 6.5%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #9566b8;
-  border-radius: 33px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  padding-left: 10px;
-  padding-right: 10px;
-  z-index: 1;
+    background-color: #9566b8;
+    border-radius: 30px;
+    padding: 15px 10px;
+    margin-top: 0.9cm;
+    width: 85%; /* Largeur fixe pour le cadre */
+    max-width: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 10px 30px rgba(149, 102, 184, 0.15);
 }
 
-
-
- 
-/* Liens */
-
-.Portfolio,
-
-.CV,
-
-.Lettre_de_motivation {
-
-  display: block;
-  background-color: white;
-  color: black;
-  padding: 10px 20px;
-  border-radius: 25px;
-  text-decoration: none;
-  width: 150px;
-  text-align: center;
-  margin: 25px;
-  box-shadow:
-
-    6px 6px 3px rgba(0, 0, 0, 0.55),
-
-    0 0 8px 0.5mm #412f13;
-
-  border: 0.2mm solid rgb(97, 70, 27);
+.Portfolio, .CV, .Lettre_de_motivation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: rgb(1, 1, 1);
+    width: 100%;  /* LARGEUR FIXE : Le bouton ne s'élargira jamais */
+    max-width: 240px;
+    height: 40px;  /* HAUTEUR FIXE : Le bouton ne grandira jamais */
+    padding: 0;
+    line-height: normal;
+    text-align: center;
+    margin: 12px 0;
+    border-radius: 25px;
+    text-decoration: none;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    box-shadow: 4px 4px 0px rgba(0, 0, 0, 0.2);
+    border: 1px solid #61461b;
+    box-sizing: border-box;
 
 }
 
-
-  @keyframes balance-horizontal {
-
-    0%   { transform: translateX(0); }
-    25%  { transform: translateX(2px); }
-    50%  { transform: translateX(0); }
-    75%  { transform: translateX(-2px); }
-    100% { transform: translateX(0); }
-  }
-  
-  .Portfolio span,
-  .CV span,
-  .Lettre_de_motivation span {
-
-    display: inline-block;
-    animation: balance-horizontal 2s ease-in-out infinite;
-  
-  }
-
-
-
-/* Footer */
-
+/* FOOTER */
 .bas_de_page {
-
-  position:fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  text-align: center;
-  font-size: 2.7mm;
-
-
+    position: absolute;
+    bottom: 15px;
+    width: 100%;
+    font-size: 0.7rem;
+    color: #381743;
 }
 
- 
+/* Uniquement pour les écrans de téléphone */
+@media (max-width: 480px) {
+    .Github { left: -10% !important; top: -5%; }
+    .Linkedin { right: -10% !important; }
+    .Gmail { left: 0% !important; bottom: -8%; }
+    
+    /* On réduit un peu la taille du cercle parent pour gagner de la place */
+    .ancre {
+        width: 160px;
+        height: 160px;
+    }
+}
