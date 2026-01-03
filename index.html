@@ -1,113 +1,45 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mon Linktree</title>
-<link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Linktree</title>
+<link rel="stylesheet" href="style.css?v=1.1"> 
+
 </head>
-
-
 
 <body>
 
-
 <header>
-
-  <!-- Bouton de partage -->
-<button class="share-btn" aria-label="Partager"></button>
-
+    <button class="share-btn" aria-label="Partager"></button>
 </header>
 
-
-
-
-
-
-
 <main>
+    <div class="ancre">
+        <img src="mel1.png" alt="Photo de profil" class="profile-pic">
+        <a href="https://github.com/MelM26" class="Github"></a>
+        <a href="https://www.linkedin.com/in/melanie-vandenbranden" target="_blank" class="Linkedin" aria-label="LinkedIn"></a>
+        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=melanie.vdb26@mail.com" target="_blank" class="Gmail" aria-label="Gmail"></a>
+    </div>
 
-  <!-- Bloc photo + icônes -->
+    <p class="nom">@Mel_VdB</p>
+    <p class="Bio_poste">Étudiante UI / UX Design</p>
 
-<div class="ancre">
-
-<!-- Photo -->
-
-<img src="mel1.png" alt="Photo de profil" class="profile-pic">
-
-
-<!--Bouton Github-->
-
-<a href="https://github.com/MelM26" class="Github"></a>
-
-
-<!-- Bouton linkedin-->
-
-
-<a href="https://www.linkedin.com/in/melanie-vandenbranden" target="_blank" class="Linkedin" aria-label="LinkedIn"></a>
-
-
-<!-- Bouton tiktok-->
-
-
-<a href="https://mail.google.com/mail/?view=cm&fs=1&to=melanie.vdb26@mail.com" target="_blank" class="Gmail" aria-label="Gmail"></a>
-
-</div>
-
-<!-- Fin Div -->
- 
-
-
-  <!-- Nom et bio -->
-
-<p class="nom">@Mel_VdB</p>
-<p class="Bio_poste">Étudiante UI / UX Design</p>
-
- 
-
-
-
-  <!-- Cadre central -->
-
-<div class="cadre">
- 
-
-    <!-- Liens -->
-
-<a href= "https://golden-directions-310985.framer.app" class="Portfolio">
-  
-  <span>Portfolio</span>
-
-
-  </a>
-
-<a href="https://photos.app.goo.gl/8D5r3SJtSHkt3dxo9" target="_blank" class="CV"> 
-  
-  <span> CV </span>
-
-</a>
-
-<a href="https://photos.app.goo.gl/PfVo7uztrKSv2JmB7" target="_blank" class="Lettre_de_motivation"> 
-  
-  <span> Lettre de motivation </span>
-
-</a>
-
-</div>
-
-
+    <div class="cadre">
+        <a href="https://golden-directions-310985.framer.app" class="Portfolio">
+            <span>Portfolio</span>
+        </a>
+        <a href="https://photos.app.goo.gl/8D5r3SJtSHkt3dxo9" target="_blank" class="CV"> 
+            <span>CV</span>
+        </a>
+        <a href="https://photos.app.goo.gl/PfVo7uztrKSv2JmB7" target="_blank" class="Lettre_de_motivation"> 
+            <span>Lettre de motivation</span>
+        </a>
+    </div>
 </main>
- 
-
-
-
-
 
 <footer class="bas_de_page">
-
-<p> © 2025 - by Mélanie Van den Branden </p>
- 
+    <p>© 2025 - by Mélanie Van den Branden</p>
 </footer>
 
 <script>
@@ -119,16 +51,14 @@ document.querySelector(".share-btn").addEventListener("click", async () => {
         text: "Découvre mon Linktree !",
         url: window.location.href
       });
-      console.log("Partagé avec succès !");
     } catch (err) {
-      console.log("Partage annulé ou erreur :", err);
+      console.log("Erreur de partage :", err);
     }
   } else {
     alert("Le partage n'est pas supporté sur cet appareil.");
   }
 });
 </script>
-
 
 </body>
 </html>
