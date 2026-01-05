@@ -16,6 +16,7 @@ font-family: 'Outfit', sans-serif; /* Application de la nouvelle police */    co
 }
 
 /* BOUTON PARTAGE */
+/* BOUTON PARTAGE */
 .share-btn {
     position: absolute;
     top: 20px;
@@ -31,7 +32,12 @@ font-family: 'Outfit', sans-serif; /* Application de la nouvelle police */    co
     background-repeat: no-repeat;
     background-position: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    
+    /* On garde l'animation de rotation ici */
     animation: rotation-lente 15s linear infinite;
+    
+    /* On prépare la transition pour la couleur ET le zoom séparé */
+    transition: background-color 0.3s ease, scale 0.3s ease;
     z-index: 10;
 }
 
@@ -40,7 +46,16 @@ font-family: 'Outfit', sans-serif; /* Application de la nouvelle police */    co
     to { transform: rotate(360deg); }
 }
 
+.share-btn:hover { 
+    background-color: rgba(239, 247, 242, 0.8); 
+    /* ASTUCE : On utilise 'scale' au lieu de 'transform: scale' */
+    /* Cela permet de zoomer sans casser la rotation de l'animation */
+    scale: 1.2; 
+}
+
+
 /* LE BLOC CENTRAL (Tout ce que tu veux au milieu) */
+
 main {
     position: absolute;
     top: 50%; /* On le place à 50% du haut */
@@ -67,7 +82,12 @@ main {
     border-radius: 50%;
     object-fit: cover;
     z-index: 2;
-}
+    transition: box-shadow 0.3s ease; } 
+
+.profile-pic:hover { 
+        
+    box-shadow: 0 0 20px 5px rgba(15, 17, 66, 0.8); /* Effet lumière bleu */ } 
+
 
 .Github, .Linkedin, .Gmail {
     position: absolute;
@@ -82,11 +102,46 @@ main {
     z-index: 3;
     background-repeat: no-repeat;
     background-position: center;
+    transition: background-size 0.3s ease-in-out, background-color 0.3s ease-in-out, transform 0.3s ease; z-index: 2; 
+
 }
 
-.Github { top: -14%; left: -65%; background-image: url('github.png'); background-size: 65%; }
-.Linkedin { top: 35%; right: -55%; background-image: url('linkedin.png'); background-size: 60%; }
-.Gmail { bottom: -3%; left: -38%; background-image: url('email.png'); background-size: 60%; }
+.Github { 
+
+    top: -14%; 
+    left: -65%; 
+    background-image: url('github.png'); 
+    background-size: 65%; }
+
+.Github:hover { 
+                    
+    background-color: rgba(239, 247, 242, 0.8); 
+    transform: scale(1.2); } .Linkedin { top: 27%; right: -55%; 
+    background-image: url('linkedin.png'); 
+    background-size: 60%; } 
+
+.Linkedin { 
+    top: 35%; 
+    right: -55%; 
+    background-image: url('linkedin.png'); 
+    background-size: 60%; }
+
+.Linkedin:hover { 
+    background-color: rgba(239, 247, 242, 0.8); 
+    transform: scale(1.2); } 
+
+.Gmail { 
+    
+    bottom: -3%; 
+    left: -38%; 
+    background-image: url('email.png'); 
+    background-size: 60%; }
+
+    .Gmail:hover { 
+
+        background-color: rgba(239, 247, 242, 0.8); 
+        transform: scale(1.2); 
+    }
 
 /* TEXTES */
 .nom {
@@ -138,6 +193,14 @@ main {
     box-sizing: border-box;
 
 }
+
+    .Portfolio span, .CV span, .Lettre_de_motivation span { 
+
+         display: inline-block; 
+         animation: balance-horizontal 2s ease-in-out infinite; } 
+
+ @keyframes balance-horizontal { 0% { transform: translateX(0); } 25% { transform: translateX(2px); } 50% { transform: translateX(0); } 75% { transform: translateX(-2px); } 100% { transform: translateX(0); } } 
+
 
 /* FOOTER */
 .bas_de_page {
